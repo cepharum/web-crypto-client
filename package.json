@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lexa7979/crypto.git"
+    "url": "git+https://github.com/lexa79/web-crypto-client.git"
   },
   "author": "Cepharum GmbH",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lexa7979/crypto/issues"
+    "url": "https://github.com/lexa79/web-crypto-client/issues"
   },
-  "homepage": "https://github.com/lexa7979/crypto#readme"
+  "homepage": "https://github.com/lexa79/web-crypto-client#readme"
 }
