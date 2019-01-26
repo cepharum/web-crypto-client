@@ -1,0 +1,19 @@
+{
+  "name": "web-crypto-client",
+  "version": "0.1.1",
+  "description": "Module to access Web Crypto API and design apps where encryption keys are stored on the client's side",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexa7979/crypto.git"
+  },
+  "author": "Cepharum GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexa7979/crypto/issues"
+  },
+  "homepage": "https://github.com/lexa7979/crypto#readme"
+}
