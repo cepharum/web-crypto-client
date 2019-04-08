@@ -1,6 +1,6 @@
 {
   "name": "web-crypto-client",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Module to access the Web Crypto API and to design apps where the encryption keys are stored in the browser",
   "main": "lib/crypto.js",
   "directories": {
