@@ -1,21 +1,17 @@
 {
   "name": "web-crypto-client",
-  "version": "0.3.2",
+  "version": "0.3.5",
   "description": "Module to access the Web Crypto API and to design apps where the encryption keys are stored in the browser using IndexedDB",
   "author": "Cepharum GmbH",
   "license": "MIT",
-  "main": "server/crypto.cjs.js",
-  "browser": "dist/web-crypto-client.umd.js",
+  "main": "server/crypto.js",
+  "browser": "src/crypto.js",
   "files": [
     "server/*.js",
-    "dist/*.js"
+    "src/*.js"
   ],
   "scripts": {
-	"prepublishOnly": "npm run build",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pretest": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -32,9 +28,6 @@
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "rollup": "^1.9.0",
-    "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-node-resolve": "^4.2.1"
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
