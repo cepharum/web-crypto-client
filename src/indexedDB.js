@@ -26,8 +26,6 @@
  * @author: cepharum
  */
 
-"use strict";
-
 /**
  * This class handles connections to the browser's IndexedDB.
  */
@@ -193,7 +191,7 @@ class Database {
 
 const db = new Database();
 
-module.exports = {
+export default {
 	serveObject() {
 		return db;
 	}

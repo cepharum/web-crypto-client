@@ -26,12 +26,10 @@
  * @author: cepharum
  */
 
-"use strict";
-
 /**
  * This class provides support for the handling of Uint8Array data buffers
  */
-class BufferTools {
+const BufferTools = {
 
 	/**
 	 * Behaves similar to Array.concat():
@@ -43,7 +41,7 @@ class BufferTools {
 	 * @returns {Uint8Array}
 	 * 		Resulting data buffer with data from all given buffers
 	 */
-	static concat( ...dataBuffers ) {
+	concat( ...dataBuffers ) {
 		if ( typeof dataBuffers !== "object" || dataBuffers.length === 0 ) {
 			throw new Error( "BufferTools.concat(): Invalid arguments" );
 		}
@@ -67,7 +65,7 @@ class BufferTools {
 		}
 
 		return newBuf;
-	}
+	},
 
 	/**
 	 * This function cuts the given data buffer into two parts,
@@ -80,7 +78,7 @@ class BufferTools {
 	 * @returns {Array<Uint8Array>}
 	 * 		Array containing the two separated buffers
 	 */
-	static splitInTwo( dataBuffer12, splitPos ) {
+	splitInTwo( dataBuffer12, splitPos ) {
 		const buf12 = dataBuffer12 instanceof ArrayBuffer ? new Uint8Array( dataBuffer12 ) : dataBuffer12;
 		if ( !( buf12 instanceof Uint8Array ) || typeof splitPos !== "number" ) {
 			throw new Error( "BufferTools.split(): Invalid arguments" );
@@ -90,7 +88,7 @@ class BufferTools {
 			buf12.subarray( 0, splitPos ),
 			buf12.subarray( splitPos )
 		];
-	}
+	},
 
 	/**
 	 * This method converts the given ASCII string into a proper data buffer.
@@ -100,7 +98,7 @@ class BufferTools {
 	 * @returns {Uint8Array}
 	 * 		Converted data buffer
 	 */
-	static fromAscii( dataString ) {
+	fromAscii( dataString ) {
 		if ( typeof dataString !== "string" ) {
 			throw new Error( "BufferTools.fromAscii(): Invalid arguments" );
 		}
@@ -111,7 +109,7 @@ class BufferTools {
 		}
 
 		return buf;
-	}
+	},
 
 	/**
 	 * This method extracts the ASCII-string which is contained in the given data buffer.
@@ -121,14 +119,14 @@ class BufferTools {
 	 * @returns {string}
 	 * 		Extracted ASCII-string
 	 */
-	static toAscii( dataBuffer ) {
+	toAscii( dataBuffer ) {
 		const buf = dataBuffer instanceof ArrayBuffer ? new Uint8Array( dataBuffer ) : dataBuffer;
 		if ( !( buf instanceof Uint8Array ) ) {
 			throw new Error( "BufferTools.toAscii(): Invalid arguments" );
 		}
 
 		return String.fromCharCode.apply( null, new Uint8Array( buf ) );
-	}
+	},
 
 	/**
 	 * This method converts the given hexadecimal string into a proper data buffer.
@@ -138,7 +136,7 @@ class BufferTools {
 	 * @returns {Uint8Array}
 	 * 		Converted data buffer
 	 */
-	static fromHex( dataString ) {
+	fromHex( dataString ) {
 		if ( typeof dataString !== "string" || dataString.length % 2 != 0 ) {
 			throw new Error( "BufferTools.fromHex(): Invalid arguments" );
 		}
@@ -157,7 +155,7 @@ class BufferTools {
 		}
 
 		return buf;
-	}
+	},
 
 	/**
 	 * The data of the given buffer will be converted into a hexadecimal string.
@@ -167,7 +165,7 @@ class BufferTools {
 	 * @returns {string}
 	 * 		Extracted hexadecimal string
 	 */
-	static toHex( dataBuffer ) {
+	toHex( dataBuffer ) {
 		const buf = dataBuffer instanceof ArrayBuffer ? new Uint8Array( dataBuffer ) : dataBuffer;
 		if ( !( buf instanceof Uint8Array ) ) {
 			throw new Error( "BufferTools.toHex(): Invalid arguments" );
@@ -181,7 +179,7 @@ class BufferTools {
 		}
 
 		return hexBytes;
-	}
+	},
 
 	/**
 	 * The given object will be converted into a data buffer
@@ -198,7 +196,7 @@ class BufferTools {
 	 * @returns {Uint8Array}
 	 * 		Data buffer containing the object's JSON-string (surrounded by noise if requested)
 	 */
-	static fromObject( dataObject, addNoise = false ) {
+	fromObject( dataObject, addNoise = false ) {
 		if ( typeof dataObject !== "object" ) {
 			throw new Error( "BufferTools.fromObject(): Invalid arguments" );
 		}
@@ -231,7 +229,7 @@ class BufferTools {
 		}
 
 		return dataBuffer;
-	}
+	},
 
 	/**
 	 * This function takes a data buffer and extracts the object
@@ -245,7 +243,7 @@ class BufferTools {
 	 * @returns {object|null}
 	 * 		Extracted object
 	 */
-	static toObject( dataBuffer ) {
+	toObject( dataBuffer ) {
 		const buf = dataBuffer instanceof ArrayBuffer ? new Uint8Array( dataBuffer ) : dataBuffer;
 		if ( !( buf instanceof Uint8Array ) ) {
 			throw new Error( "BufferTools.toObject(): Invalid arguments" );
@@ -269,4 +267,4 @@ class BufferTools {
 	}
 }
 
-module.exports = new BufferTools();
+export default BufferTools;
