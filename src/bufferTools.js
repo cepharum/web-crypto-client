@@ -269,4 +269,4 @@ class BufferTools {
 	}
 }
 
-module.exports.default = new BufferTools();
+module.exports = new BufferTools();

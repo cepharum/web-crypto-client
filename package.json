@@ -1,34 +1,36 @@
 {
   "name": "web-crypto-client",
-  "version": "0.1.2",
-  "description": "Module to access the Web Crypto API and to design apps where the encryption keys are stored in the browser",
-  "main": "lib/crypto.js",
-  "directories": {
-    "lib": "lib",
-    "test": "tests"
-  },
+  "version": "0.1.5",
+  "description": "Module to access the Web Crypto API and to design apps where the encryption keys are stored in the browser using IndexedDB",
+  "author": "Cepharum GmbH",
+  "license": "MIT",
+  "main": "dist/browser.js",
+  "files": [
+    "src/*.js",
+    "dist/*.js"
+  ],
   "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"build": "browserify browser.js -o static/bundle.js",
-	"watch": "watchify browser.js -o static/bundle.js --debug --verbose"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/crypto.js -o dist/browser.js",
+    "watch": "watchify src/crypto.js -o dist/browser.js --debug --verbose"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lexa79/web-crypto-client.git"
   },
-  "author": "Cepharum GmbH",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/lexa79/web-crypto-client/issues"
   },
   "homepage": "https://github.com/lexa79/web-crypto-client#readme",
   "devDependencies": {
+    "browserify": "^16.2.3",
     "eslint": "^5.12.1",
     "eslint-config-cepharum": "^1.0.8",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "watchify": "^3.11.1"
   }
 }

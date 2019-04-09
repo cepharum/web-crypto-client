@@ -193,7 +193,7 @@ class Database {
 
 const db = new Database();
 
-module.exports.default = {
+module.exports = {
 	serveObject() {
 		return db;
 	}
