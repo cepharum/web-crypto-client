@@ -1,13 +1,13 @@
 {
   "name": "web-crypto-client",
-  "version": "0.2.12",
+  "version": "0.3.2",
   "description": "Module to access the Web Crypto API and to design apps where the encryption keys are stored in the browser using IndexedDB",
   "author": "Cepharum GmbH",
   "license": "MIT",
-  "main": "dist/web-crypto-client.cjs.js",
-  "module": "dist/web-crypto-client.esm.js",
+  "main": "server/crypto.cjs.js",
   "browser": "dist/web-crypto-client.umd.js",
   "files": [
+    "server/*.js",
     "dist/*.js"
   ],
   "scripts": {
